@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCultivar - O Jogo do Equilíbrio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <div class="logo">🌱 EcoCultivar</div>
+        <nav>
+            <a href="#" class="nav-link active" onclick="mudarPagina('jogo')">O Jogo</a>
+            <a href="#" class="nav-link" onclick="mudarPagina('sobre-mim')">Sobre Mim</a>
+            <a href="#" class="nav-link" onclick="mudarPagina('agrinho')">O Agrinho</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <section id="pagina-jogo" class="page active">
+            <div class="intro">
+                <h1>O Jogo do Equilíbrio Sustentável</h1>
+                <p>Gerencie sua propriedade virtual. Seu desafio é manter o equilíbrio entre a <strong>Produção</strong> e a preservação do <strong>Meio Ambiente</strong>.</p>
+            </div>
+
+            <div class="simulador-box">
+                <div class="status-painel">
+                    <div class="status-card">
+                        <h3>Produção</h3>
+                        <div class="barra-fundo"><div id="barra-producao" class="barra" style="width: 50%;"></div></div>
+                        <span id="txt-producao">50%</span>
+                    </div>
+                    <div class="status-card">
+                        <h3>Meio Ambiente</h3>
+                        <div class="barra-fundo"><div id="barra-ambiente" class="barra" style="width: 50%;"></div></div>
+                        <span id="txt-ambiente">50%</span>
+                    </div>
+                </div>
+
+                <div class="mensagem-jogo">
+                    <p id="feedback-jogo">Escolha uma ação para iniciar o manejo da sua fazenda.</p>
+                </div>
+
+                <div class="botoes-acoes">
+                    <button class="btn btn-danger" onclick="jogar('agrotoxico')">Usar Defensivos Químicos em Excesso</button>
+                    <button class="btn btn-danger" onclick="jogar('desmatar')">Desmatar para Expandir Lavoura</button>
+                    <button class="btn btn-success" onclick="jogar('rotacao')">Praticar Rotação de Culturas</button>
+                    <button class="btn btn-success" onclick="jogar('bioinsumo')">Aplicar Bioinsumos</button>
+                    <button class="btn btn-success" onclick="jogar('app')">Isolar Áreas de Preservação (APP)</button>
+                </div>
+                
+                <button class="btn-reiniciar" onclick="reiniciarJogo()">Reiniciar Simulador</button>
+            </div>
+
+            <div class="almanaque-secao">
+                <h2>📚 Almanaque Verde</h2>
+                <p>Entenda a ciência por trás das práticas agrícolas que salvam o planeta:</p>
+                <div class="almanaque-grid">
+                    <div class="almanaque-card">
+                        <h4>Rotação de Culturas</h4>
+                        <p>Alternar espécies de plantas na mesma área quebra o ciclo de pragas e melhora a nutrição natural do solo, reduzindo a necessidade de adubos químicos.</p>
+                    </div>
+                    <div class="almanaque-card">
+                        <h4>Bioinsumos</h4>
+                        <p>Defensivos e fertilizantes de origem biológica (como bactérias benéficas ou insetos predadores) combatem pragas sem poluir a água ou o solo.</p>
+                    </div>
+                    <div class="almanaque-card">
+                        <h4>Preservação de APPs</h4>
+                        <p>As Áreas de Preservação Permanente protegem as margens de rios e encostas, evitando a erosão e garantindo que a água nunca falte na propriedade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pagina-sobre-mim" class="page">
+            <div class="perfil-container">
+                <h1>Sobre Mim</h1>
+                <div class="perfil-conteudo">
+                    <div class="avatar">👤</div>
+                    <div>
+                        <p>Olá! Seja bem-vindo ao EcoCultivar.</p>
+                        <p>Sou um entusiasta da tecnologia e da sustentabilidade. Desenvolvi este projeto com o objetivo de conscientizar as pessoas sobre a importância do agronegócio moderno, mostrando que a produção de alimentos e a conservação da natureza podem (e devem) caminhar lado a lado.</p>
+                        <p>Através da gamificação, acredito que conceitos complexos como o manejo sustentável se tornam mais acessíveis, divertidos e fáceis de compreender para todas as idades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pagina-agrinho" class="page">
+            <h1>O Programa Agrinho</h1>
+            <p>O <strong>Agrinho</strong> é um dos maiores programas de responsabilidade social e ambiental, levando educação, cidadania e consciência ecológica para milhares de alunos e professores há gerações.</p>
+            
+            <div class="agrinho-info">
+                <h3>Por que o Agrinho é fundamental?</h3>
+                <ul>
+                    <li><strong>Conexão Campo-Cidade:</strong> Ajuda a aproximar a realidade do campo de quem vive nos centros urbanos.</li>
+                    <li><strong>Sustentabilidade na Prática:</strong> Estimula a reflexão sobre hábitos de consumo, proteção de recursos hídricos e preservação ambiental.</li>
+                    <li><strong>Valorização do Produtor:</strong> Mostra a tecnologia e o cuidado que o agricultor dedica para alimentar o mundo de forma responsável.</li>
+                </ul>
+            </div>
+            <blockquote>
+                "Transformar a sociedade pela base, unindo educação, ética e sustentabilidade no campo e na cidade."
+            </blockquote>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EcoCultivar - Desenvolvido para um Agro Sustentável.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
