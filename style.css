@@ -1,1 +1,246 @@
+/* Configurações Gerais e Cores */
+:root {
+    --primary-color: #2e7d32;
+    --primary-light: #4caf50;
+    --dark-color: #1b5e20;
+    --bg-color: #f1f8e9;
+    --text-color: #333;
+    --danger-color: #d32f2f;
+    --white: #ffffff;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav a {
+    color: #c8e6c9;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+}
+
+/* Sistema de Páginas (SPA) */
+.container {
+    flex: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.page {
+    display: none; /* Esconde todas as páginas por padrão */
+}
+
+.page.active {
+    display: block; /* Mostra apenas a página ativa */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mecânica do Jogo */
+.intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.simulador-box {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 3rem;
+}
+
+.status-painel {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.status-card {
+    flex: 1;
+    text-align: center;
+}
+
+.barra-fundo {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 25px;
+    width: 100%;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.barra {
+    height: 100%;
+    width: 50%;
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+#barra-producao { background-color: #ffa000; }
+#barra-ambiente { background-color: var(--primary-light); }
+
+.mensagem-jogo {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.botoes-acoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .botoes-acoes { grid-template-columns: 1fr; }
+    .status-painel { flex-direction: column; }
+}
+
+.btn {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.2s;
+}
+
+.btn:active { transform: scale(0.98); }
+.btn-danger { background-color: var(--danger-color); }
+.btn-danger:hover { filter: brightness(0.9); }
+.btn-success { background-color: var(--primary-color); }
+.btn-success:hover { filter: brightness(1.1); }
+
+.btn-reiniciar {
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    background: transparent;
+    border: 1px solid #999;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Almanaque */
+.almanaque-secao {
+    margin-top: 2rem;
+}
+
+.almanaque-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.almanaque-card {
+    background: #edf7ed;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--primary-light);
+}
+
+.almanaque-card h4 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Páginas Sobre Mim e Agrinho */
+.perfil-conteudo {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+}
+
+.avatar {
+    font-size: 4rem;
+    background: #e8f5e9;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.agrinho-info {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.agrinho-info ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.agrinho-info li {
+    margin-bottom: 0.5rem;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin: 2rem 0;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #bbb;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
